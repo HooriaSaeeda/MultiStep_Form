@@ -23,19 +23,19 @@ This is a simple weather application that allows users to search for the current
 
 ### Screenshot
 
-MULTISTEP FORM : STEP1
+- **MULTISTEP FORM : STEP1**
 
 ![](./Assets/form_step1.png)
 
-MULTISTEP FORM : STEP2
+- **MULTISTEP FORM : STEP2**
 
 ![](./Assets/form_step2.png)
 
-MULTISTEP FORM : STEP3
+- **MULTISTEP FORM : STEP3**
 
 ![](./Assets/form_step3.png)
 
-MULTISTEP FORM : STEP4
+- **MULTISTEP FORM : STEP4**
 
 ![](./Assets/form_step4.png)
 
