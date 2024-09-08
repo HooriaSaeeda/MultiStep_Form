@@ -1,5 +1,7 @@
-# MULTISTEP FORM
- 
+# MULTISTEP FORM - Subway Sign-Up Form
+
+A multi-step sign-up form for subway users, allowing them to create an account, submit personal information, upload identification, and generate a QR code for subway access.
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -23,81 +25,75 @@ This is a simple weather application that allows users to search for the current
 
 MULTISTEP FORM : STEP1
 
-![](./assets/form_step1.png)
+![](./Assets/form_step1.png)
 
 MULTISTEP FORM : STEP2
 
-![](./assets/form_step2.png)
+![](./Assets/form_step2.png)
 
 MULTISTEP FORM : STEP3
 
-![](./assets/form_step3.png)
+![](./Assets/form_step3.png)
 
 MULTISTEP FORM : STEP4
 
-![](./assets/form_step4.png)
+![](./Assets/form_step4.png)
 
 
 ### Links
 
-- Solution URL: [https://github.com/hoor23/https---github.com-hoor23-WheatherApp.git](https://github.com/hoor23/https---github.com-hoor23-WheatherApp.git)
-- Live Site URL: [ https://hoor23.github.io/https---github.com-hoor23-WheatherApp/]( https://hoor23.github.io/https---github.com-hoor23-WheatherApp/)
+- Solution URL: [https://github.com/hoor23/MultiStep_Form.git](https://github.com/hoor23/MultiStep_Form.git)
+- Live Site URL: [https://hoor23.github.io/MultiStep_Form/](https://hoor23.github.io/MultiStep_Form/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties (Variables)
-- Vanilla JavaScript (ES6+)
-- Fetch API
-- OpenWeatherMap API
+- HTML5 : for the structure of the webpage
+- CSS3 : for styling and layout, including media queries for responsive design
+- JavaScript (ES6): for managing form steps and handling the file upload system
+- Google Fonts : for typography (Open Sans font)
+- Responsive design : to ensure usability on various screen sizes
 
 ### What I learned
 
-This project helped me understand how to fetch real-time data from a third-party API and dynamically update the UI with JavaScript. Below is an important snippet showing how I handled the API call and processed the weather data:
+While building this project, I deepened my understanding of:
+- Creating multi-step forms with step indicators using JavaScript.
+- Handling drag-and-drop file uploads with `dragover`, `dragleave`, and `drop` events.
+- Using JavaScript to dynamically manage form progress and interactivity, such as adding and removing CSS classes based on user actions.
+
+
+This snippet demonstrates how I managed the multi-step form logic:
 
 ```javascript
-let getWeather = () => {
-  let cityValue = cityRef.value;
-  if (cityValue.length == 0) {
-    result.innerHTML = `<h3 class="msg">Please enter a city name</h3>`;
-  } else {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric`;
-    fetch(url)
-      .then((Resp) => Resp.json())
-      .then((data) => {
-        result.innerHTML = `
-          <h2>${data.name}</h2>
-          <h4 class="weather">${data.weather[0].description}</h4>
-          <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
-          <h1>${data.main.temp} &#176</h1>
-          <div class="temp-container">
-            <div>
-              <h4 class="title">min</h4>
-              <h4 class="temp">${data.main.temp_min}</h4>
-            </div>
-            <div>
-              <h4 class="title">max</h4>
-              <h4 class="temp">${data.main.temp_max}</h4>
-            </div>
-          </div>
-        `;
-      })
-      .catch(() => {
-        result.innerHTML = `<h3 class="msg">City not found</h3>`;
-      });
-  }
-};
+let index = 0;
 
+nextBtn.addEventListener("click", handleNext);
+
+function handleNext(event) {
+  index++;
+  
+  if (index === 3) {
+    nextBtn.style.display = "none";
+  }
+
+  document.querySelector(".count.active").classList.remove("active");
+  stepinfo[index].classList.add("active");
+
+  document.querySelector(".steps.active").classList.remove("active");
+  steps[index].classList.add("active");
+}
 ```
+
+This section of code dynamically updates the active step in the form when the user clicks the "Next" button.
+
 ### Continued development
 
-I plan to improve this app by:
+For future iterations of the project, I plan to:
 
-- Adding more weather details (e.g., humidity, wind speed)
-- Implementing a more sophisticated UI/UX design
-- Optimizing the app for better performance on slower networks
+- Add form validation to ensure all fields are filled in correctly before moving to the next step.
+- Improve the UI/UX with more visually appealing animations and transitions between steps.
+- Implement a backend service to store user data and handle QR code generation.
 
 ## Author
 - Frontend Mentor - [hoor23](https://www.frontendmentor.io/profile/hoor23)
@@ -106,4 +102,4 @@ I plan to improve this app by:
 
 ## Acknowledgments
 
-A big thanks to Frontend Mentor for the design inspiration and challenges. Also, a special mention to the OpenWeatherMap team for providing a free weather API.
+- Thanks to Codewell for the design inspiration.
