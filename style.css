@@ -1,0 +1,236 @@
+
+    * ,::after, ::before
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body
+    {
+
+       font-family:  'Open Sans', sans-serif;   
+    font-weight: 400;
+font-size: 1.125rem;
+    }
+    header
+    {
+display: flex;
+justify-content: space-between;
+align-items: center;
+    }
+    .main
+   {
+    padding: 5rem 0;
+   }
+    .container
+    {
+        max-width: 1140px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 2.5rem 9rem;
+    }
+   .createAccount
+   {
+    background-color: white;
+    border: 1px solid #e3e2e2;
+    padding: 14px 21px;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    font-weight: 400;
+   }
+  
+   .count.active
+   {
+background-color: #0faf51;
+color: white;
+   }
+   .count{
+    background-color: #f9f9fb;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+   }
+   .Step-indicator
+   {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 56px;
+   }
+   .StepInfo
+   {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+   }
+ .headingLine
+ {
+    text-align: center;
+    margin-bottom: 51px;
+ }
+ .heading-title
+ {
+    line-height: 1.3;
+    margin-bottom: 8px;
+
+ }
+ .heading-lead
+ {
+    color: #595959;
+ }
+ .form-wrapper
+ {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.75rem;
+    margin-bottom: 1.5rem;
+ }
+ label
+ {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #595959;
+ }
+ input
+ {
+    border: 1px solid #e3e2e2;
+    border-radius: 5px;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 16px 20px;
+    outline: none;
+ }
+ input:focus
+ {
+    border: 1px solid #255ce9;
+    outline: none;
+ }
+ ::placeholder
+ {
+    color: #949fae;
+    font-size: 11px;
+ }
+ .steps.active 
+ {
+    display: block;
+ }
+.steps
+{
+    display: none;
+}
+ .drop_zone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #a4b7dc;
+    width: 50%;
+    margin: 0 auto;
+    height: 300px;
+ }
+ .qr_wrapper
+ {
+    display: flex;
+    justify-content: center;
+ }
+ .drop_promt
+ {
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+ }
+ .nextBtn
+ {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: white;
+    background-color: #0faf51;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    display: block;
+    margin-left: auto;
+cursor:pointer;
+ }
+ul{
+list-style: none;
+padding-left: 0;
+}
+.footer ul
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2.25rem;
+}
+.footer
+{
+    border-top: 1px solid #e3e2e2;
+    padding-top: 31px;
+    color: #595959;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dropzone__over {
+  border-style: solid;
+}
+.dropzone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width:1024px)
+{
+    .container{
+        padding: 2.5rem 3.5rem;;
+    }
+}
+@media screen and (max-width:768px)
+{
+    .form-wrapper
+    {
+        flex-wrap: wrap;
+    }
+    .nextBtn{
+        margin: auto;
+    }
+    label{
+        display: block;
+    }
+}
+@media screen and (max-width:508px){
+    .footer {
+        font-size: 15px;
+    }
+    .footer ul{
+        gap: 1.9rem;
+    }
+}
+@media screen and (max-width:425px){
+    .footer {
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+    .footer ul{
+        flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+    .container {
+        padding: 2.5rem 2.5rem;
+    }
+    .createAccount {
+    padding: 10px 3px;
+    font-size: 0.8rem;
+}
+}
